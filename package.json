@@ -1,5 +1,5 @@
 {
-  "name": "@octodemo/octocat-zen",
+  "name": "@satish271088/satish-octocat-zen",
   "version": "1.0.0",
   "description": "Octocat Zen",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:octodemo/octocat-zen.git"
+    "url": "ssh://git@github.com:satish271088/satish-octocat-zen.git"
   },
   "author": "",
   "license": "ISC",
