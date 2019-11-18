@@ -39,10 +39,4 @@ jobs:
       run: |
         npm install eslint --save-dev
         ./node_modules/.bin/eslint --no-eslintrc .
-      
-    - name: Upload report
-      uses: actions/upload-artifact@master
-      with:
-        name: coverage
-        path: ${{ github.workspace }}/coverage
 
