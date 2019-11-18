@@ -11,6 +11,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Add comment 
+      if: github.event_name == 'pull_request' && (github.event.action == 'opened')
+      uses: actions/github@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: comment "Thank you for opening this pull request :tada::sparkles:"      
     - name: Use Node.js ${{env.NODE_VERSION }}
       uses: actions/setup-node@v1
       with:
@@ -26,3 +33,4 @@ jobs:
       run: |
         npm install eslint --save-dev
         ./node_modules/.bin/eslint --no-eslintrc .
+
