@@ -18,7 +18,4 @@ describe('loading express', function () {
             .get('/foo/bar')
             .expect(404, done);
     });
-    
-
-});
 });
