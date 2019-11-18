@@ -1,4 +1,4 @@
-name: Node CI
+name: Node CI build
 
 on: [pull_request]
 
@@ -11,6 +11,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-      
     - name: Add comment 
       if: github.event_name == 'pull_request' && (github.event.action == 'reopened')
       uses: actions/github@v1.0.0
